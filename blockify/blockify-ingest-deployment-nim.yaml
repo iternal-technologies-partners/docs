@@ -1,7 +1,7 @@
 # Copyright (C) 2025 Iternal Technologies, Inc. All rights reserved.
 #
 # ===================================================================
-# Deployment for Blockify Ingest (v1.0)
+# Deployment for Blockify Ingest (v1.0) with NVIDIA NIM
 # 
 # Contains the Kubernetes manifests for a complete deployment of the
 # Blockify Ingest, powered by the NVIDIA NIM for Llama.
@@ -62,7 +62,7 @@ spec:
         - name: NGC_API_KEY
           valueFrom:
             secretKeyRef:
-              name: YOUR_IMAGE_PULL_SECRET # Replace with the secret name for nvcr.io (e.g. nvcr-secret)
+              name: YOUR_IMAGE_PULL_SECRET # Replace with the secret name for nvcr.io (e.g. ngc-api)
               key: NGC_API_KEY
 
         ports:
@@ -96,7 +96,7 @@ spec:
 
       # Define the secret needed to pull the image from nvcr.io.
       imagePullSecrets:
-      - name: YOUR_IMAGE_PULL_SECRET # Replace with the secret name for nvcr.io (e.g. nvcr-secret)
+      - name: YOUR_IMAGE_PULL_SECRET # Replace with the secret name for nvcr.io (e.g. ngc-secret)
 
 ---
 # ===================================================================
