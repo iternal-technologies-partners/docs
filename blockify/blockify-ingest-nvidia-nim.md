@@ -147,9 +147,16 @@ spec:
         # The NIM service runs on port 8000 by default.
         - containerPort: 8000
           name: http-api
-        
+
         resources:
+          requests:
+            cpu: "8"
+            memory: "32Gi"
+            # Request one NVIDIA GPU.
+            nvidia.com/gpu: 1
           limits:
+            cpu: "16"
+            memory: "64Gi"
             # Request one NVIDIA GPU.
             nvidia.com/gpu: 1
 
