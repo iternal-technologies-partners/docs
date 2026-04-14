@@ -125,7 +125,7 @@ spec:
       containers:
       - name: blockify-nim-container
         # Standard NVIDIA NIM image for Llama 3 8B Instruct.
-        image: nvcr.io/nim/meta/llama-3.1-8b-instruct:latest
+        image: nvcr.io/nim/meta/llama-3.1-8b-instruct:1.13
 
         # Configure the NIM container environment.
         env:
